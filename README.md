@@ -4,21 +4,28 @@ a catalog app that's deployed in aws ec2 vm
 ## Settings
 ###IP address:
 
-52.26.178.19
+52.34.206.110
 
 ###URL: 
 
-http://ec2-52-26-178-19.us-west-2.compute.amazonaws.com
+http://ec2-52-34-206-110.us-west-2.compute.amazonaws.com
 
 ###SSH Port:
 
 2200
+
+###grader user info:
+- user name: grader
+- passwd: Grader@udacity.com
 
 ###List of packages installed:
 ####apt-get list:
 - ntpd
 - postgresql
 - python-pip
+- python-dev
+- fail2ban
+- unattended-upgrades
 
 ####pip list:
 - Flask
@@ -30,6 +37,7 @@ http://ec2-52-26-178-19.us-west-2.compute.amazonaws.com
 - flask-seasurf
 - dicttoxml
 - flask_wtf
+- glances
 
 ###Configuration Changes:
 - ssh port changed to 2200
@@ -38,8 +46,8 @@ http://ec2-52-26-178-19.us-west-2.compute.amazonaws.com
 
 ~~~~
 <VirtualHost *:80>
-                ServerName 52.26.178.19
-                ServerAlias ec2-52-26-178-19.us-west-2.compute.amazonaws.com
+                ServerName 52.34.206.110
+                ServerAlias ec2-52-34-206-110.us-west-2.compute.amazonaws.com
                 ServerAdmin admin@mywebsite.com
                 WSGIScriptAlias / /var/www/catalog/catalog.wsgi
                 <Directory /var/www/catalog/catalog/>
@@ -61,6 +69,11 @@ http://ec2-52-26-178-19.us-west-2.compute.amazonaws.com
                 CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ~~~~
+
+###Additional Features:
+- use unattended-upgrades to automatically install security updates.
+- use fail2ban to monitor unsuccessful login attempts and ban attackers.
+- use python glances to monitor system
 
 ###Great References:
 
