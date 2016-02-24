@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+      <div class="row jumbotron">
+        <div class = 'flash'>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul>
+                {% for message in messages %}
+                    <li> <strong> {{ message }} </strong> </li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+            {% endwith %}
+
+        </div>
+        <div class="col-lg-3">
+          <h3>Categories</h3>
+          {% for category in categories %}
+          <a href="{{url_for('showCategoryItems', category_name=category.name)}}">
+            <h4 class="list-group-item-heading">{{category.name}}</h4>
+          </a>
+          {% endfor %}
+        </div>
+
+        <div class="col-lg-9">
+          <p><a class="btn-lg btn-success" href="{{url_for('newItem')}}" role="button">Add Item</a></p>
+          <h3>Latest Items</h3>
+          {% for item in latestitems %}
+          <a href="{{url_for('showItemDetail', category_name=item.category.name, item_name=item.name)}}">
+            <h4 class="list-group-item-heading">{{item.name}}({{item.category.name}})</h4>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>Project by Yijun</p>
+      </footer>
+
+{% endblock %}

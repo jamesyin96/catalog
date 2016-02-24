@@ -1,0 +1,14 @@
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+            {% if 'username' not in session %}
+            <li role="presentation" class="active"><a href="{{url_for('showLogin')}}">Login</a></li>
+            {% else %}
+            <li role="presentation" class="active"><a href="{{url_for('disconnect')}}">Log out</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+        <a href="{{url_for('showCategories')}}">
+            <h3 class="text-muted">Catalog App</h3>
+        </a>
+    </div>

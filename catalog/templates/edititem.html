@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row jumbotron">
+		<h3>Edit Item</h3>
+		<div class="col-lg-12">
+			<form action="#" enctype="multipart/form-data" method = "post">
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}"/>
+				<ul>
+					<li>{{form.name.label}}</li>
+					<li>{{form.name(value=editItem.name,size=20)}}</li>
+					<li>{{form.description.label}}</li>
+					<li>{{form.description}}</li>
+					<li>{{form.category.label}}</li>
+					<li>{{form.category}}</li>
+					<li>{{form.upload.label}}{{form.upload}}</li>
+				</ul>
+				<button type="submit" class="btn btn-default" id="submit" type="submit">
+				<span class="glyphicon" aria-hidden="true"></span>Submit
+				</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}
+

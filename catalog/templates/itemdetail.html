@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+      <div class="row jumbotron">
+        <div class="col-lg-12">
+        <div class="profile_image"><img src={{ url_for('static', filename = ('uploads/'+item.pic_name))}} alt="Item Image" height="200" width="200"></div>
+          <h3>{{item.name}}</h3>
+          <p>{{item.description}}</p>
+        </div>
+        <p>
+            <a class="btn-sm btn-warning" href="{{url_for('editItem', item_name=item.name)}}" role="button">Edit</a>
+            <a class="btn-sm btn-danger" href="{{url_for('deleteItem', item_name=item.name)}}" role="button">Delete</a>
+        </p>
+      </div>
+
+      <footer class="footer">
+        <p>Project by Yijun</p>
+      </footer>
+
+{% endblock %}
