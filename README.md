@@ -24,6 +24,7 @@ http://ec2-52-34-206-110.us-west-2.compute.amazonaws.com
 - apache2
 - libapache2-mod-wsgi
 - postgresql
+- python-psycopg2
 - python-pip
 - python-dev
 - git
@@ -32,7 +33,6 @@ http://ec2-52-34-206-110.us-west-2.compute.amazonaws.com
 
 ####pip list:
 - Flask
-- psycopg2
 - sqlalchemy
 - oauth2client
 - requests
