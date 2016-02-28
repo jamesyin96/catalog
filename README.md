@@ -20,10 +20,13 @@ http://ec2-52-34-206-110.us-west-2.compute.amazonaws.com
 
 ###List of packages installed:
 ####apt-get list:
-- ntpd
+- ntp(ntpd)
+- apache2
+- libapache2-mod-wsgi
 - postgresql
 - python-pip
 - python-dev
+- git
 - fail2ban
 - unattended-upgrades
 
