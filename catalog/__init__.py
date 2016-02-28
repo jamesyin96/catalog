@@ -22,7 +22,6 @@ from werkzeug import secure_filename
 from flask.ext.seasurf import SeaSurf
 from dicttoxml import dicttoxml
 from functools import wraps
-from database_setup import DATABASE
 from sqlalchemy.engine.url import URL
 
 
@@ -37,6 +36,14 @@ CLIENT_ID = json.loads(open('/var/www/catalog/g_client_secrets.json', 'r').
                        read())['web']['client_id']
 
 # Connect to Database and create database session
+DATABASE = {
+    'drivername': 'postgres',
+    'host': 'localhost',
+    'port': '5432',
+    'username': 'catalog',
+    'password': 'catalog',
+    'database': 'catalog'
+}
 engine = create_engine(URL(**DATABASE))
 Base.metadata.bind = engine
 

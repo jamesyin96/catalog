@@ -4,11 +4,11 @@ a catalog app that's deployed in aws ec2 vm
 ## Settings
 ###IP address:
 
-52.34.206.110
+52.36.114.208
 
 ###URL: 
 
-http://ec2-52-34-206-110.us-west-2.compute.amazonaws.com
+http://ec2-52-36-114-208.us-west-2.compute.amazonaws.com
 
 ###SSH Port:
 
@@ -16,6 +16,7 @@ http://ec2-52-34-206-110.us-west-2.compute.amazonaws.com
 
 ###grader user info:
 - user name: grader
+- private key pass phrase: grader
 - passwd: Grader@udacity.com
 
 ###List of packages installed:
@@ -49,8 +50,8 @@ http://ec2-52-34-206-110.us-west-2.compute.amazonaws.com
 
 ~~~~
 <VirtualHost *:80>
-                ServerName 52.34.206.110
-                ServerAlias ec2-52-34-206-110.us-west-2.compute.amazonaws.com
+                ServerName 52.36.114.208
+                ServerAlias ec2-52-36-114-208.us-west-2.compute.amazonaws.com
                 ServerAdmin admin@mywebsite.com
                 WSGIScriptAlias / /var/www/catalog/catalog.wsgi
                 <Directory /var/www/catalog/catalog/>
