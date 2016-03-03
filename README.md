@@ -1,23 +1,28 @@
 # Catalog
-a catalog app that's deployed in aws ec2 vm
+a sports catalog web app using Flask and deployed on AWS EC2 vm
 
 ## Settings
+
+###EC2 VM Version:
+Ubuntu 14.04.4 LTS
+
 ###IP address:
 
-52.36.114.208
+52.36.114.208(subject to change since the VM instance will be removed, so does the URL)
 
 ###URL: 
 
 http://ec2-52-36-114-208.us-west-2.compute.amazonaws.com
 
-###SSH Port:
+###SSH Port(Not the default port 22):
 
 2200
 
 ###grader user info:
-- user name: grader
 - private key pass phrase: grader
+- user name: grader
 - passwd: Grader@udacity.com
+- login type: private key authentication only
 
 ###List of packages installed:
 ####apt-get list:
@@ -45,6 +50,10 @@ http://ec2-52-36-114-208.us-west-2.compute.amazonaws.com
 
 ###Configuration Changes:
 - ssh port changed to 2200
+- disable root login
+- add grader user to sudoers config
+- ufw only allows port: 80, 123, 2200
+- update the Google/Facebook oauth client secret according to your application
 - add entry for database user catalog in pg_hba.conf
 - apaceh site configuration file:
 
