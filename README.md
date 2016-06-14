@@ -94,7 +94,7 @@ http://ec2-52-36-114-208.us-west-2.compute.amazonaws.com
 2. [An tutorial to set up configuration in Flask for postgresql][2]
 
 [1]: https://discussions.udacity.com/t/p5-how-i-got-through-it/15342
-[2]: http://stackoverflow.com
+[2]: http://newcoder.io/scrape/part-3/
 
 
 I strongly agree with "/var/log/apache2/error.log is you best friend!"
